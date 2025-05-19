@@ -1,0 +1,298 @@
+{
+	"info": {
+		"_postman_id": "55db3db4-d3d0-42be-897e-2e2f4c63227e",
+		"name": "Book Review",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38245681"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"sakthipriyagece@email.com\",\n    \"password\": \"12345678\"\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				},
+				"description": "Generated from cURL: curl -X POST http://localhost:5000/login \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"email\": \"your@email.com\",\n    \"password\": \"yourpassword\"\n  }'\n"
+			},
+			"response": []
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\": \"sakthi\", \n\"email\": \"sakthipriyagece@email.com\", \n\"password\": \"12345678\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				},
+				"description": "Generated from cURL: curl -X POST http://localhost:5000/register \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"username\": \"testuser\", \"email\": \"test@example.com\", \"password\": \"test123\"}'\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Add book",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODJiMmU1MGYwM2I5NmE0NmE0ZGI4MGMiLCJpYXQiOjE3NDc2NjA0MDMsImV4cCI6MTc0NzY2NDAwM30.9J5qD-mL535kaKrTVhhnxCmCUFlTEzyHkjVv0kjtBO4"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Clean Code\",\n    \"author\": \"Robert C. Martin\",\n    \"description\": \"A Handbook of Agile Software Craftsmanship\",\n    \"publishedYear\": 2008\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"books"
+					]
+				},
+				"description": "Generated from cURL: curl -X POST http://localhost:5000/api/books \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Authorization: Bearer $TOKEN\" \\\n  -d '{\n    \"title\": \"The Silent Patient\",\n    \"author\": \"Alex Michaelides\",\n    \"genre\": \"Thriller\",\n    \"description\": \"A psychological thriller about a woman’s act of violence against her husband—and of the therapist obsessed with uncovering her motive.\"\n}'\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Get all books",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"books"
+					]
+				},
+				"description": "Generated from cURL: curl http://localhost:5000/api/books\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Book by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/books/682b308ef03b96a46a4db80f",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"books",
+						"682b308ef03b96a46a4db80f"
+					]
+				},
+				"description": "Generated from cURL: curl http://localhost:5000/api/books/BOOK_ID_HERE\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Add review",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODJiMmU1MGYwM2I5NmE0NmE0ZGI4MGMiLCJpYXQiOjE3NDc2NjA0MDMsImV4cCI6MTc0NzY2NDAwM30.9J5qD-mL535kaKrTVhhnxCmCUFlTEzyHkjVv0kjtBO4"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"bookId\": \"682b308ef03b96a46a4db80f\",\n    \"rating\": 5,\n    \"comment\": \"Awesome book!\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/reviews",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"reviews"
+					]
+				},
+				"description": "Generated from cURL: curl -X POST http://localhost:5000/api/reviews \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Authorization: Bearer YOUR_TOKEN_HERE\" \\\n  -d '{\n    \"bookId\": \"BOOK_OBJECT_ID_HERE\",\n    \"rating\": 5,\n    \"comment\": \"Awesome book!\"\n}'\n"
+			},
+			"response": []
+		},
+		{
+			"name": "update Review",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODJiMmU1MGYwM2I5NmE0NmE0ZGI4MGMiLCJpYXQiOjE3NDc2NjA0MDMsImV4cCI6MTc0NzY2NDAwM30.9J5qD-mL535kaKrTVhhnxCmCUFlTEzyHkjVv0kjtBO4"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"rating\": 4,\n    \"comment\": \"Great book\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/reviews/682b30a3f03b96a46a4db812",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"reviews",
+						"682b30a3f03b96a46a4db812"
+					]
+				},
+				"description": "Generated from cURL: curl -X PUT http://localhost:5000/api/reviews/REVIEW_ID_HERE \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Authorization: Bearer $TOKEN\" \\\n  -d '{\n    \"rating\": 4,\n    \"comment\": \"Great book, slightly slow in the middle.\"\n}'"
+			},
+			"response": []
+		},
+		{
+			"name": "delete review",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ODJiMmU1MGYwM2I5NmE0NmE0ZGI4MGMiLCJpYXQiOjE3NDc2NjA0MDMsImV4cCI6MTc0NzY2NDAwM30.9J5qD-mL535kaKrTVhhnxCmCUFlTEzyHkjVv0kjtBO4"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/reviews/682b30a3f03b96a46a4db812",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"reviews",
+						"682b30a3f03b96a46a4db812"
+					]
+				},
+				"description": "Generated from cURL: curl -X DELETE http://localhost:5000/api/reviews/REVIEW_ID_HERE \\\n  -H \"Authorization: Bearer $TOKEN\"\n"
+			},
+			"response": []
+		},
+		{
+			"name": "book search",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/books/search?q=clean",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"books",
+						"search"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "clean"
+						}
+					]
+				},
+				"description": "Generated from cURL: curl -X GET \"http://localhost:5000/api/books/search?q=martin\" -H \"Content-Type: application/json\"\n"
+			},
+			"response": []
+		}
+	]
+}
